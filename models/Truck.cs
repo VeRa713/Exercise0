@@ -1,13 +1,14 @@
 namespace CarFactory.Models
 {
-    public class Truck
+    public class Truck : Vehicle
     {
-        private string model;
-        private float capacity;
+        public string Model { get; set; }
+        public float Capacity { get; set; }
 
-        private Truck(string model, float capacity){
-            this.model = model;
-            this.capacity = capacity;
+        public Truck(string color, string brand, string model, float capacity) : base(color, brand)
+        {
+            this.Capacity = capacity;
+            this.Model = model;
         }
     }
 }

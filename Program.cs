@@ -6,6 +6,8 @@ namespace CSharpDemo
     {
         static void Main(string[] args)
         {
+            List<Vehicle> vehicles = new List<Vehicle>();
+
             Console.WriteLine("\n======= WELCOME =======");
 
             Console.Write("How may vehicles would you like to add? ");
@@ -23,21 +25,27 @@ namespace CSharpDemo
                 Console.Write("\nWhat vehicle would you like to create? ");
                 string choice = Console.ReadLine();
 
+                string color = "";
                 string model = "";
-                float capacity = 0;
+                float capacity = 0.00f;
 
-                Vehicle vehicle;
+                Car car;
+                Truck truck;
 
                 switch (choice.ToUpper())
                 {
                     case "C":
                         Console.WriteLine("\n===== Create Car =====");
 
-                        Console.Write("Enter model: ");
+                        Console.Write("Enter brand: ");
                         model = Console.ReadLine();
 
-                        vehicle = new Vehicle("Car");
-                        order.AddTransaction(vehicle);
+                        Console.Write("Enter color: ");
+                        color = Console.ReadLine();
+
+                        car = new Car(color, model, choice);
+
+                        vehicles.Add(car);
 
                         successfulTransaction++;
                         Console.WriteLine("Car order successfully created!");
@@ -47,14 +55,18 @@ namespace CSharpDemo
                     case "T":
                         Console.WriteLine("\n===== Create Truck =====");
 
-                        Console.Write("Enter model: ");
+                        Console.Write("Enter brand: ");
                         model = Console.ReadLine();
+
+                        Console.Write("Enter color: ");
+                        color = Console.ReadLine();
 
                         Console.Write("Enter Capacity: ");
                         capacity = float.Parse(Console.ReadLine());
 
-                        vehicle = new Vehicle("Truck");
-                        order.AddTransaction(vehicle);
+                        truck = new Truck(color, model, choice, capacity);
+
+                        vehicles.Add(truck);
 
                         successfulTransaction++;
                         Console.WriteLine("Truck order successfully created!");
@@ -69,11 +81,19 @@ namespace CSharpDemo
 
             Console.WriteLine("\n\n======= ORDER SUMMARY =======");
 
-            for (int i = 0; i < order.GetVehicles().Count; i++)
+            foreach (Vehicle v in vehicles)
             {
-                Vehicle v = order.GetVehicles()[i];
-                Console.WriteLine("\nOrder #" + (i + 1));
-                Console.WriteLine("Vehicle Type: " + v.GetVehicleType());
+                if (v.GetType() == typeof(Car))
+                {
+                    // Typecasting temp to be treated as a CheckingAccount
+                    Car temp = (Car)v;
+                    Console.WriteLine("Vehicle is a Car");
+                }
+                else if (v.GetType() == typeof(Truck))
+                {
+                    Truck temp = (Truck)v;
+                    Console.WriteLine("Vehicle is a Truck");
+                }
             }
 
             Console.WriteLine("\n\n=============================");

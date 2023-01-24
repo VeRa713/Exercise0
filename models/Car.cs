@@ -1,11 +1,12 @@
 namespace CarFactory.Models
 {
-    public class Car
+    public class Car : Vehicle
     {
-        private string model;
+        public string Model { get; set; }
 
-        private Car(string model){
-            this.model = model;
+        public Car(string color, string brand, string model) : base(color, brand)
+        {
+            this.Model = model;
         }
     }
 }

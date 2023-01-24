@@ -12,9 +12,9 @@ namespace CarFactory.Models
             this.brand = brand;
         }
 
-        public Vehicle(string transactionType)
+        public Vehicle(string vehicleType)
         {
-            this.vehicleType = transactionType;
+            this.vehicleType = vehicleType;
         }
 
         public String GetVehicleType()
