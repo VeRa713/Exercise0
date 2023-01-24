@@ -77,20 +77,20 @@ namespace CSharpDemo
                 }
             }
 
-            Console.WriteLine("\n\n======= ORDER SUMMARY =======");
+            Console.WriteLine("\n\n======= VEHICLE LIST =======");
 
-            foreach (Vehicle v in vehicles)
+            for (int i = 0; i < vehicles.Count; i++)
             {
-                if (v.GetType() == typeof(Car))
+                if (vehicles[i].GetType() == typeof(Car))
                 {
                     // Typecasting temp to be treated as a CheckingAccount
-                    Car temp = (Car)v;
-                    Console.WriteLine("Vehicle is a Car");
+                    Car temp = (Car)vehicles[i];
+                    Console.WriteLine("\nVehicle #" + (i + 1) + " is a Car");
                 }
-                else if (v.GetType() == typeof(Truck))
+                else if (vehicles[i].GetType() == typeof(Truck))
                 {
-                    Truck temp = (Truck)v;
-                    Console.WriteLine("Vehicle is a Truck");
+                    Truck temp = (Truck)vehicles[i];
+                    Console.WriteLine("\nVehicle #" + (i + 1) + " is a Truck");
                 }
             }
 
