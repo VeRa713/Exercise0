@@ -2,24 +2,13 @@ namespace CarFactory.Models
 {
     public class Vehicle
     {
-        private string color;
-        private string brand;
-        private string vehicleType;
+        public string Color { get; set; }
+        public string Brand { get; set; }
 
         public Vehicle(string color, string brand)
         {
-            this.color = color;
-            this.brand = brand;
-        }
-
-        public Vehicle(string vehicleType)
-        {
-            this.vehicleType = vehicleType;
-        }
-
-        public String GetVehicleType()
-        {
-            return this.vehicleType;
+            this.Color = color;
+            this.Brand = brand;
         }
     }
 }
