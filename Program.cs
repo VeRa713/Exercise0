@@ -15,8 +15,6 @@ namespace CSharpDemo
 
             int successfulTransaction = 0;
 
-            Order order = new Order();
-
             while (successfulTransaction < loop)
             {
                 Console.WriteLine("\n\n======= MENU ======= ");
