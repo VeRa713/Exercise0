@@ -1,6 +1,6 @@
 ﻿using CarFactory.Models;
 
-namespace CSharpDemo
+namespace CarFactory
 {
     public class Program
     {
