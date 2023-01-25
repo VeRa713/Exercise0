@@ -83,7 +83,7 @@ namespace CarFactory
             {
                 if (vehicles[i].GetType() == typeof(Car))
                 {
-                    // Typecasting temp to be treated as a CheckingAccount
+                    // Typecasting
                     Car temp = (Car)vehicles[i];
                     Console.WriteLine("\nVehicle #" + (i + 1) + " is a Car");
                 }
